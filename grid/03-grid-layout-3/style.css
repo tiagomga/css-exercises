@@ -4,6 +4,10 @@
 }
 
 .container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 0.5fr 5fr 1fr;
+  gap: 4px;
   text-align: center;
 }
 
@@ -16,7 +20,24 @@
 }
 
 .header {
+  grid-column: 1 / 3;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   background-color: #393f4d;
+}
+
+.logo {
+  justify-self: start;
+  align-self: center;
+}
+
+.menu {
+  align-self: center;
+}
+
+.menu ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .menu ul,
@@ -24,8 +45,22 @@
   font-size: 16px;
 }
 
+ul,
+li {
+  list-style-type: none;
+}
+
 .sidebar {
+  grid-row: 2 / 5;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 50px;
   background-color: #C50208;
+}
+
+.sidebar div {
+  display: grid;
+  align-items: center;
 }
 
 .sidebar .photo {
@@ -48,12 +83,21 @@
   background-color: #C50208;
 }
 
+.nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .nav ul li {
   font-size: 16px;
   text-transform: uppercase;
 }
 
 .article {
+  grid-row: 3 / 5;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
   background-color: #bccbde;
 }
 
@@ -68,6 +112,7 @@
   background-color: #FFFFFF;
   color: black;
   text-align: center;
+  height: 200px;
 }
 
 .card p {
@@ -82,6 +127,7 @@
 }
 
 .footer {
+  grid-column: 1 / 3;
   background-color: #393f4d;
 }
 
